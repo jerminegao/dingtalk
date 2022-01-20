@@ -11,9 +11,9 @@
 
 namespace EasyDingTalk\Kernel\Traits;
 
-use Overtrue\Http\Exceptions\InvalidArgumentException;
-use Overtrue\Http\Responses\Response;
-use Overtrue\Http\Support\Collection;
+use EasyDingTalk\Kernel\Exceptions\InvalidArgumentException;
+use EasyDingTalk\Kernel\Responses\Response;
+use EasyDingTalk\Kernel\Support\Collection;
 use Psr\Http\Message\ResponseInterface;
 
 /**
