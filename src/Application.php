@@ -11,7 +11,7 @@
 
 namespace EasyDingTalk;
 
-use Overtrue\Http\Support\Collection;
+use EasyDingTalk\Kernel\Support\Collection;
 use Pimple\Container;
 
 /**

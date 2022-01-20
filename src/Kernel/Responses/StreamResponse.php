@@ -11,7 +11,7 @@
 
 namespace EasyDingTalk\Kernel\Responses;
 
-use Overtrue\Http\Exceptions\InvalidArgumentException;
+use EasyDingTalk\Kernel\Exceptions\InvalidArgumentException;
 use Overtrue\Http\Support\File;
 
 /**

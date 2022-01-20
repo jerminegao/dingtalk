@@ -13,7 +13,7 @@ namespace EasyDingTalk\Kernel\Traits;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
-use GuzzleHttp\HandlerStack;
+
 /**
  * Trait HasHttpRequests.
  */
@@ -75,7 +75,7 @@ trait HasHttpRequests
     public function getHttpClient(): ClientInterface
     {
         if (!$this->httpClient) {
-            $this->httpClient = new Client(['handler' => HandlerStack::create($this->getGuzzleHandler())]);
+            $this->httpClient = new Client(['handler' => $this->getHandlerStack()]);
         }
 
         return $this->httpClient;
@@ -94,21 +94,5 @@ trait HasHttpRequests
     public function request($uri, $method = 'GET', $options = [], bool $async = false)
     {
         return $this->getHttpClient()->{ $async ? 'requestAsync' : 'request' }(strtoupper($method), $uri, array_merge(self::$defaults, $options));
-    }
-
-    /**
-     * Get guzzle handler.
-     *
-     * @return callable
-     */
-    protected function getGuzzleHandler()
-    {
-        if (property_exists($this, 'app') && isset($this->app['guzzle_handler'])) {
-            return is_string($handler = $this->app->raw('guzzle_handler'))
-                ? new $handler()
-                : $handler;
-        }
-
-        return \GuzzleHttp\choose_handler();
     }
 }

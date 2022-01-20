@@ -12,8 +12,8 @@
 namespace EasyDingTalk\Kernel\Responses;
 
 use GuzzleHttp\Psr7\Response as GuzzleResponse;
-use Overtrue\Http\Support\Collection;
-use Overtrue\Http\Support\XML;
+use EasyDingTalk\Kernel\Support\Collection;
+use EasyDingTalk\Kernel\Support\XML;
 use Psr\Http\Message\ResponseInterface;
 
 /**
