@@ -13,6 +13,7 @@ namespace EasyDingTalk;
 
 use EasyDingTalk\Kernel\Traits\HasHttpRequests;
 use EasyDingTalk\Kernel\Traits\ResponseCastable;
+use EasyDingTalk\Kernel\Traits\CreatesDefaultHttpClient;
 use EasyDingTalk\Messages\Message;
 use EasyDingTalk\Messages\Text;
 use EasyDingTalk\Messages\Link;
@@ -20,7 +21,7 @@ use EasyDingTalk\Messages\Markdown;
 
 class Robot
 {
-    use HasHttpRequests, ResponseCastable;
+    use HasHttpRequests, ResponseCastable, CreatesDefaultHttpClient;
 
     protected $config;
 
