@@ -133,4 +133,18 @@ class Robot
         $this->message->sendAt($this->mobiles, $this->atAll);
         return $this->send($this->message->getBody());
     }
+
+    /**
+     * @param array $mobiles
+     * @param bool $atAll
+     * @return $this
+     */
+    public function at($mobiles = [], $atAll = false){
+        $this->mobiles = $mobiles;
+        $this->atAll = $atAll;
+        if ($this->message) {
+            $this->message->sendAt($mobiles, $atAll);
+        }
+        return $this;
+    }
 }
